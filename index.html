@@ -539,7 +539,7 @@
 
         <!-- ------------------------portfollio 2-------------------- -->
         <div class="portfolio__content grid swiper-slide">
-          <img src="./assets/img/kopiko.JPG" class="portfolio__img">
+          <img src="./assets/img/kopiko.jpg " alt="nothing" class="portfolio__img">
 
           <div class="portfolio__data">
             <h3 class="portfolio__title">Kopiko</h3>
@@ -613,33 +613,61 @@
         </div>
       </div>
 
-      <form action="https://api.web3forms.com/submit" method="POST"
-        id="submitform"  class="contact__form grid">
+      <form action="https://api.web3forms.com/submit" method="POST" id="submitform" class="contact__form grid">
         <div class="contact__inputs grid">
+      
           <div class="contact__content">
-            <label for="" class="content__label">Name</label>
-            <input type="text" name="name" class="contact__input required">
+            <label for="name" class="content__label">Name</label>
+            <input 
+              type="text" 
+              name="name" 
+              id="name" 
+              class="contact__input" 
+              required 
+              pattern="[a-zA-Z\s]{3,30}" 
+              title="Name must be between 3 to 30 alphabetic characters."
+            >
           </div>
+      
           <input type="hidden" name="access_key" value="d57818d8-3391-4689-b849-696755732270">
-
+      
           <div class="contact__content">
-            <label for="" class="content__label">Email</label>
-            <input type="Email" name="email" class="contact__input required">
+            <label for="email" class="content__label">Email</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              class="contact__input" 
+              required 
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+              title="Enter a valid email address (e.g., example@mail.com)."
+            >
           </div>
         </div>
-
+      
         <div class="contact__content">
-            <label for="" class="content__label">Message</label>
-            <textarea name="message" id="" cols="0" rows="7" class="contact__input required"></textarea>
-          </div>
-
-          <div>
-            <button type="submit" class="button button--flex">
-              Send Message
-              <i class="uil uil-message button__icon"></i>
-            </button>
-          </div>
+          <label for="message" class="content__label">Message</label>
+          <textarea 
+            name="message" 
+            id="message" 
+            cols="0" 
+            rows="7" 
+            class="contact__input" 
+            required 
+            minlength="10" 
+            maxlength="500" 
+            title="Message must be between 10 to 500 characters."
+          ></textarea>
+        </div>
+      
+        <div>
+          <button type="submit" class="button button--flex">
+            Send Message
+            <i class="uil uil-message button__icon"></i>
+          </button>
+        </div>
       </form>
+      
     </div>
   </section>
 </main>
